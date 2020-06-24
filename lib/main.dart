@@ -7,9 +7,7 @@ main() => runApp(ExpensesApp());
 class ExpensesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: MyHomePage()
-    );
+    return MaterialApp(home: MyHomePage());
   }
 }
 
@@ -31,9 +29,9 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold
-    (appBar: AppBar(
-      title: Text('Despesas Pessoais'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Despesas Pessoais'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -50,7 +48,19 @@ class MyHomePage extends StatelessWidget {
           Column(
             children: _transactions.map((tr) {
               return Card(
-                child: Text(tr.title),
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      child: Text(tr.value.toString()),
+                    ),
+                    Column(
+                      children: <Widget>[
+                        Text(tr.title),
+                        Text(tr.date.toString())
+                      ],
+                    )
+                  ],
+                ),
               );
             }).toList(),
           )
