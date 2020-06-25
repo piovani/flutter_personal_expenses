@@ -1,4 +1,4 @@
-#Wed Jun 24 22:26:48 BRT 2020
+#Wed Jun 24 22:53:21 BRT 2020
 base.0=/home/piovani/projects/others/flutter_personal_expenses/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
