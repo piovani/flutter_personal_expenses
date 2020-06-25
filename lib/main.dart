@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_personal_expenses/models/transaction.dart';
 import 'models/transaction.dart';
+import 'package:intl/intl.dart';
 
 main() => runApp(ExpensesApp());
 
@@ -70,9 +71,12 @@ class MyHomePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(tr.title,
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold)),
-                        Text(tr.date.toString(), style: TextStyle(color: Colors.grey[600]),)
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)
+                        ),
+                        Text(
+                          DateFormat('d MMM y').format(tr.date), 
+                          style: TextStyle(color: Colors.grey[600])
+                        )
                       ],
                     )
                   ],
