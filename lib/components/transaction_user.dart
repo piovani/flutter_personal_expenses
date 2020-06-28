@@ -34,30 +34,6 @@ class _TransactionUserState extends State<TransactionUser>
       value: 78.10,
       date: DateTime.now(),
     ), 
-    Transaction(
-      id: 't4',
-      title: 'Cacau show',
-      value: 9994.50,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't5',
-      title: 'Cacau show',
-      value: 1,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't9',
-      title: 'Cacau show',
-      value: 849534,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't10',
-      title: 'Cacau show',
-      value: 849534.857,
-      date: DateTime.now(),
-    )
   ];
 
   @override
