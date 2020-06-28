@@ -27,6 +27,36 @@ class _TransactionUserState extends State<TransactionUser>
       title: 'Cacau show',
       value: 15.50,
       date: DateTime.now(),
+    ),
+     Transaction(
+      id: 't3',
+      title: 'Cacau show',
+      value: 78.10,
+      date: DateTime.now(),
+    ), 
+    Transaction(
+      id: 't4',
+      title: 'Cacau show',
+      value: 9994.50,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: 't5',
+      title: 'Cacau show',
+      value: 1,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: 't9',
+      title: 'Cacau show',
+      value: 849534,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: 't10',
+      title: 'Cacau show',
+      value: 849534.857,
+      date: DateTime.now(),
     )
   ];
 
@@ -59,8 +89,8 @@ class _TransactionUserState extends State<TransactionUser>
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        TransactionList(_transactions),
         TransactionForm(_addTransaction),
+        TransactionList(_transactions),
       ],
     );
   }
