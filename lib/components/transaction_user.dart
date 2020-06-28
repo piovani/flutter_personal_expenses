@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_personal_expenses/components/transaction_list.dart';
 import 'transactions_form.dart';
@@ -9,8 +11,8 @@ class TransactionUser extends StatefulWidget {
   _TransactionUserState createState() => _TransactionUserState();
 }
 
-class _TransactionUserState extends State<TransactionUser> with SingleTickerProviderStateMixin {
-  
+class _TransactionUserState extends State<TransactionUser>
+    with SingleTickerProviderStateMixin {
   AnimationController _controller;
 
   final _transactions = [
@@ -28,8 +30,6 @@ class _TransactionUserState extends State<TransactionUser> with SingleTickerProv
     )
   ];
 
-
-
   @override
   void initState() {
     super.initState();
@@ -40,6 +40,19 @@ class _TransactionUserState extends State<TransactionUser> with SingleTickerProv
   void dispose() {
     super.dispose();
     _controller.dispose();
+  }
+
+  _addTransaction(String title, double value) {
+    final newTransaction = Transaction(
+      id: Random().nextDouble().toString(),
+      title: title,
+      value: value,
+      date: DateTime.now(),
+    );
+
+    setState(() {
+      _transactions.add(newTransaction);
+    });
   }
 
   @override
