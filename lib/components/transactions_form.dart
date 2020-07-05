@@ -23,7 +23,7 @@ class _TransactionFormState extends State<TransactionForm> {
       return;
     }
 
-    widget.onSubmit(title, value);              
+    widget.onSubmit(title, value);
   }
 
   @override
