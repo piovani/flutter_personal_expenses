@@ -14,18 +14,20 @@ class ExpensesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: MyHomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.purple,
+        accentColor: Colors.amber,
+      ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   final _transactions = [
     Transaction(
       id: 't1',
@@ -39,12 +41,12 @@ class _MyHomePageState extends State<MyHomePage> {
       value: 15.50,
       date: DateTime.now(),
     ),
-     Transaction(
+    Transaction(
       id: 't3',
       title: 'Cacau show',
       value: 78.10,
       date: DateTime.now(),
-    ), 
+    ),
   ];
 
   _addTransaction(String title, double value) {
@@ -64,11 +66,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   _openTransactionFormModal(BuildContext context) {
     showModalBottomSheet(
-      context: context, 
-      builder: (_) {
-        return TransactionForm(_addTransaction);
-      }
-    );
+        context: context,
+        builder: (_) {
+          return TransactionForm(_addTransaction);
+        });
   }
 
   @override
@@ -85,19 +86,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Container(
-              width: double.infinity,
-              child: Card(
-                color: Colors.blue,
-                child: Text('Gráfico'),
-                elevation: 5,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Container(
+                width: double.infinity,
+                child: Card(
+                  color: Colors.blue,
+                  child: Text('Gráfico'),
+                  elevation: 5,
+                ),
               ),
-            ),
-            TransactionList(_transactions),
-          ]
-        ),
+              TransactionList(_transactions),
+            ]),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
