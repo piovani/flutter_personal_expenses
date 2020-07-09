@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_personal_expenses/components/chart_bar.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_personal_expenses/models/transaction.dart';
 
 class Chart extends StatelessWidget {
-
   final List<Transaction> recentTranssaction;
 
   Chart(this.recentTranssaction);
@@ -35,14 +35,19 @@ class Chart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     groupedTransactions;
 
     return Card(
       elevation: 6,
       margin: EdgeInsets.all(20),
       child: Row(
-        children: <Widget>[],
+        children: groupedTransactions.map((tr) {
+          return ChartBar(
+            label: tr['day'],
+            value: tr['value'],
+            percentage: 0,
+          );
+        }).toList(),
       ),
     );
   }
