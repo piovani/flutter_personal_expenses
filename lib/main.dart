@@ -20,12 +20,15 @@ class ExpensesApp extends StatelessWidget {
           accentColor: Colors.amber,
           fontFamily: 'Quicksand',
           textTheme: ThemeData.light().textTheme.copyWith(
-            title: TextStyle(
-              fontFamily: 'OpenSans',
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            )
-          ),
+              title: TextStyle(
+                fontFamily: 'OpenSans',
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+              button: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              )),
           appBarTheme: AppBarTheme(
               textTheme: ThemeData.light().textTheme.copyWith(
                   title: TextStyle(
@@ -61,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
       value: 78.10,
       date: DateTime.now().subtract(Duration(days: 4)),
     ),
-        Transaction(
+    Transaction(
       id: 't4',
       title: 'Novo Tênis',
       value: 777.90,
